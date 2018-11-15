@@ -1,6 +1,6 @@
 ﻿namespace LunchLotteryApp
 {
-    partial class FormMain
+    partial class MainForm
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelQuestion = new System.Windows.Forms.Label();
@@ -45,9 +46,9 @@
             // 
             this.buttonExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(372, 382);
+            this.buttonExit.Location = new System.Drawing.Point(372, 414);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(100, 30);
+            this.buttonExit.Size = new System.Drawing.Size(100, 33);
             this.buttonExit.TabIndex = 0;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
@@ -57,9 +58,9 @@
             // 
             this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRun.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRun.Location = new System.Drawing.Point(266, 382);
+            this.buttonRun.Location = new System.Drawing.Point(266, 414);
             this.buttonRun.Name = "buttonRun";
-            this.buttonRun.Size = new System.Drawing.Size(100, 30);
+            this.buttonRun.Size = new System.Drawing.Size(100, 33);
             this.buttonRun.TabIndex = 1;
             this.buttonRun.Text = "Run";
             this.buttonRun.UseVisualStyleBackColor = true;
@@ -68,8 +69,8 @@
             // labelQuestion
             // 
             this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Font = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelQuestion.Location = new System.Drawing.Point(12, 20);
+            this.labelQuestion.Font = new System.Drawing.Font("DFKai-SB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelQuestion.Location = new System.Drawing.Point(12, 22);
             this.labelQuestion.Name = "labelQuestion";
             this.labelQuestion.Size = new System.Drawing.Size(201, 27);
             this.labelQuestion.TabIndex = 2;
@@ -77,19 +78,19 @@
             // 
             // listBoxList
             // 
-            this.listBoxList.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.listBoxList.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.listBoxList.FormattingEnabled = true;
             this.listBoxList.ItemHeight = 16;
-            this.listBoxList.Location = new System.Drawing.Point(17, 118);
+            this.listBoxList.Location = new System.Drawing.Point(17, 128);
             this.listBoxList.Name = "listBoxList";
             this.listBoxList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBoxList.Size = new System.Drawing.Size(349, 244);
+            this.listBoxList.Size = new System.Drawing.Size(349, 260);
             this.listBoxList.TabIndex = 3;
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBoxInput.Location = new System.Drawing.Point(84, 69);
+            this.textBoxInput.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBoxInput.Location = new System.Drawing.Point(84, 75);
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(282, 27);
             this.textBoxInput.TabIndex = 4;
@@ -98,8 +99,8 @@
             // labelInput
             // 
             this.labelInput.AutoSize = true;
-            this.labelInput.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelInput.Location = new System.Drawing.Point(14, 72);
+            this.labelInput.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelInput.Location = new System.Drawing.Point(14, 78);
             this.labelInput.Name = "labelInput";
             this.labelInput.Size = new System.Drawing.Size(64, 16);
             this.labelInput.TabIndex = 5;
@@ -108,10 +109,10 @@
             // buttonInput
             // 
             this.buttonInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInput.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInput.Location = new System.Drawing.Point(372, 68);
+            this.buttonInput.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInput.Location = new System.Drawing.Point(372, 74);
             this.buttonInput.Name = "buttonInput";
-            this.buttonInput.Size = new System.Drawing.Size(100, 30);
+            this.buttonInput.Size = new System.Drawing.Size(100, 33);
             this.buttonInput.TabIndex = 6;
             this.buttonInput.Text = "加入";
             this.buttonInput.UseVisualStyleBackColor = true;
@@ -120,10 +121,10 @@
             // buttonDelete
             // 
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDelete.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Location = new System.Drawing.Point(372, 232);
+            this.buttonDelete.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Location = new System.Drawing.Point(372, 251);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(100, 30);
+            this.buttonDelete.Size = new System.Drawing.Size(100, 33);
             this.buttonDelete.TabIndex = 7;
             this.buttonDelete.Text = "刪除";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -131,28 +132,28 @@
             // 
             // statusStripMain
             // 
-            this.statusStripMain.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.statusStripMain.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStripMain.Location = new System.Drawing.Point(0, 426);
-            this.statusStripMain.MinimumSize = new System.Drawing.Size(0, 35);
+            this.statusStripMain.Location = new System.Drawing.Point(0, 461);
+            this.statusStripMain.MinimumSize = new System.Drawing.Size(0, 38);
             this.statusStripMain.Name = "statusStripMain";
-            this.statusStripMain.Size = new System.Drawing.Size(484, 35);
+            this.statusStripMain.Size = new System.Drawing.Size(484, 38);
             this.statusStripMain.TabIndex = 8;
             this.statusStripMain.Text = "statusStripMain";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("DFKai-SB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(16, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(16, 33);
             this.toolStripStatusLabel1.Text = " ";
             // 
-            // FormMain
+            // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(484, 499);
             this.Controls.Add(this.statusStripMain);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonInput);
@@ -162,10 +163,11 @@
             this.Controls.Add(this.labelQuestion);
             this.Controls.Add(this.buttonRun);
             this.Controls.Add(this.buttonExit);
-            this.MinimumSize = new System.Drawing.Size(500, 400);
-            this.Name = "FormMain";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(500, 430);
+            this.Name = "MainForm";
             this.Text = "Lunch Lottery";
-            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.statusStripMain.ResumeLayout(false);
             this.statusStripMain.PerformLayout();
             this.ResumeLayout(false);

@@ -8,17 +8,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Net;
+using System.Net.Sockets;
+using System.Diagnostics;
+
 namespace LunchLotteryApp
 {
-    public partial class FormMain : Form
+    public partial class MainForm : Form
     {
-        public FormMain()
+        public MainForm()
         {
             InitializeComponent();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
+            try
+            {
+                //顯示版本於Form title
+                var Program_Title = this.Text;
+                var Program_Version = FileVersionInfo.GetVersionInfo(this.GetType().Assembly.Location).ProductVersion;
+                List<string> IPList = new List<string>();
+                IPHostEntry iphostentry = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (IPAddress ipAddress in iphostentry.AddressList)
+                {
+                    if (ipAddress.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        IPList.Add(ipAddress.ToString());
+                    }
+                }
+                this.Text = string.Format(@"{0}  V{1}  ({2}\{3} @{4} : {5})", Program_Title, Program_Version, Environment.UserDomainName, Environment.UserName, Environment.MachineName, IPList[0]);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                //throw;
+            }
+
+
+
             listBoxList.Items.Add("CUCO");
             listBoxList.Items.Add("大蘋果");
             listBoxList.Items.Add("福來");

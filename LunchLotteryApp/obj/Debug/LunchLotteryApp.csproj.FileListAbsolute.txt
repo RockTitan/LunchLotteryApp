@@ -8,3 +8,13 @@ D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.CoreCompileInputs.cache
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.exe
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.pdb
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\bin\Debug\LunchLotteryApp.exe.config
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\bin\Debug\LunchLotteryApp.exe
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\bin\Debug\LunchLotteryApp.pdb
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csprojAssemblyReference.cache
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.MainForm.resources
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.Properties.Resources.resources
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.GenerateResource.cache
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.CoreCompileInputs.cache
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.exe
+D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.pdb
