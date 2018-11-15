@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Diagnostics;
+using System.Threading;
 
 namespace LunchLotteryApp
 {
@@ -41,8 +42,8 @@ namespace LunchLotteryApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //this.Close();
                 //throw;
             }
 
@@ -85,7 +86,7 @@ namespace LunchLotteryApp
             Random random = new Random();
 
             List<int> intList = new List<int>();
-            for (int i = 0; i < 10000000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 int varValue = random.Next();
                 do
@@ -94,6 +95,10 @@ namespace LunchLotteryApp
                 }
                 while (varValue > listBoxList.Items.Count);
                 intList.Add(varValue);
+
+                toolStripStatusLabel1.Text = listBoxList.Items[varValue].ToString();
+                this.Refresh();
+                Thread.Sleep(10);
             }
 
             var res = from n in intList
@@ -108,6 +113,7 @@ namespace LunchLotteryApp
                 index = x;
             }
 
+            toolStripStatusLabel1.Text = listBoxList.Items[index].ToString();
             MessageBox.Show(listBoxList.Items[index].ToString());
         }
 
