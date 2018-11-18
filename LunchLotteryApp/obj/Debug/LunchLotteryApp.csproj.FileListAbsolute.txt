@@ -2,7 +2,6 @@ D:\C# Practice\LunchLotteryApp\LunchLotteryApp\bin\Debug\LunchLotteryApp.exe.con
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\bin\Debug\LunchLotteryApp.exe
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\bin\Debug\LunchLotteryApp.pdb
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csprojAssemblyReference.cache
-D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.FormMain.resources
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.Properties.Resources.resources
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.GenerateResource.cache
 D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.CoreCompileInputs.cache
@@ -18,3 +17,4 @@ D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp
 D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.csproj.CoreCompileInputs.cache
 D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.exe
 D:\Program Development\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.pdb
+D:\C# Practice\LunchLotteryApp\LunchLotteryApp\obj\Debug\LunchLotteryApp.MainForm.resources
