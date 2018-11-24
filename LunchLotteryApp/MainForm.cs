@@ -12,6 +12,9 @@ using System.Net;
 using System.Net.Sockets;
 using System.Diagnostics;
 using System.Threading;
+using System.Runtime.InteropServices;
+
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace LunchLotteryApp
 {
@@ -21,6 +24,9 @@ namespace LunchLotteryApp
         {
             InitializeComponent();
         }
+
+        Excel.Application _Excel = null;
+        List<RestaurantProp> restaurants = new List<RestaurantProp>();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -46,99 +52,59 @@ namespace LunchLotteryApp
                 //this.Close();
                 //throw;
             }
+        }
 
 
+        private void button_SelectFile_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog file = new OpenFileDialog
+                {
+                    Filter = "Excel files (*.xlsx)|*.xlsx|Excel files (*.xls)|*.xls|All files (*.*)|*.*"
+                };
+                file.ShowDialog();
+                if (file.FileName == string.Empty || file == null)
+                {
+                    return;
+                }
+                this.label_FilePath.Text = file.FileName;
 
-            //listBoxList.Items.Add("CUCO");
-            //listBoxList.Items.Add("大蘋果");
-            //listBoxList.Items.Add("福來");
-            //listBoxList.Items.Add("Mama");
-            //listBoxList.Items.Add("吳家豆漿");
-            //listBoxList.Items.Add("德東49號食堂(前好粥到)");
-            //listBoxList.Items.Add("巷仔口(蛋包飯)");
-            //listBoxList.Items.Add("胡家小吃");
-            //listBoxList.Items.Add("忠誠牛肉麵");
-            //listBoxList.Items.Add("黃家牛肉麵");
-            //listBoxList.Items.Add("老北投");
-            //listBoxList.Items.Add("Subber");
+                initailExcel();
+                operExcel();
 
-            listBoxList.Items.Add("東山鴨頭");
-            listBoxList.Items.Add("滷夫滷味");
-            listBoxList.Items.Add("貴婦滷味");
-            listBoxList.Items.Add("上營大屋滷味");
-            listBoxList.Items.Add("何家蒸餃");
-            listBoxList.Items.Add("石牌蒸餃");
-            listBoxList.Items.Add("燈亮有餅");
-            listBoxList.Items.Add("阿財鍋貼");
-            listBoxList.Items.Add("蚵仔煎&下水");
-            listBoxList.Items.Add("吳家豆漿");
-            listBoxList.Items.Add("黑殿食堂");
-            listBoxList.Items.Add("彈牙麵");
-            listBoxList.Items.Add("黃家牛肉麵");
-            listBoxList.Items.Add("忠誠牛肉麵");
-            listBoxList.Items.Add("蕭家牛肉麵");
-            listBoxList.Items.Add("金春發牛肉店");
-            listBoxList.Items.Add("新婦海南雞飯");
-            listBoxList.Items.Add("滷三塊");
-            listBoxList.Items.Add("劉師傅豬腳飯");
-            listBoxList.Items.Add("石牌廣東粥");
-            listBoxList.Items.Add("鵝肉小吃店");
-            listBoxList.Items.Add("北投24小吃店");
-            listBoxList.Items.Add("宋家餡餅粥");
-            listBoxList.Items.Add("胃太小");
-            listBoxList.Items.Add("喜樂廚房");
-            listBoxList.Items.Add("蚵仔之家");
-            listBoxList.Items.Add("泰之雲");
-            listBoxList.Items.Add("東方泰國小館");
-            listBoxList.Items.Add("一極鮮");
-            listBoxList.Items.Add("越香蘭");
-            listBoxList.Items.Add("米夏");
-            listBoxList.Items.Add("JB's diner");
-            listBoxList.Items.Add("Second Floor");
-            listBoxList.Items.Add("老倉庫");
-            listBoxList.Items.Add("La Pasta");
-            listBoxList.Items.Add("Pino餐廳");
-            listBoxList.Items.Add("Chili's Grill & Bar");
-            listBoxList.Items.Add("彌生軒YAYOI");
-            listBoxList.Items.Add("濟州館");
-            listBoxList.Items.Add("高麗味");
-            listBoxList.Items.Add("洋蔥");
-            listBoxList.Items.Add("弍兩燒肉");
-            listBoxList.Items.Add("欣葉日本料理");
-            listBoxList.Items.Add("孫東寶");
-            listBoxList.Items.Add("Nagi拉麵店");
-            listBoxList.Items.Add("爭鮮迴轉壽司");
-            listBoxList.Items.Add("Subber");
-            listBoxList.Items.Add("福來早餐");
-            listBoxList.Items.Add("仟人活力早餐店");
-            listBoxList.Items.Add("石牌無名蛋餅");
-            listBoxList.Items.Add("MaMa早餐店");
-            listBoxList.Items.Add("Cuco漢堡");
-            listBoxList.Items.Add("Q burger");
-            listBoxList.Items.Add("麥當勞");
-            listBoxList.Items.Add("德州美墨炸雞");
-            listBoxList.Items.Add("茉莉漢堡");
-            listBoxList.Items.Add("摩斯漢堡");
-            listBoxList.Items.Add("皇家Pizza");
-            listBoxList.Items.Add("必勝客");
-            listBoxList.Items.Add("達美樂");
-            listBoxList.Items.Add("羊肉爐");
-            listBoxList.Items.Add("薑母鴨");
-            listBoxList.Items.Add("萬華莊家班麻油雞");
-            listBoxList.Items.Add("石牌麻油雞麵線");
-            listBoxList.Items.Add("台G店");
-            listBoxList.Items.Add("小蒙牛");
-            listBoxList.Items.Add("天鍋宴");
-            listBoxList.Items.Add("千葉火鍋");
-            listBoxList.Items.Add("石二鍋");
-            listBoxList.Items.Add("好食多");
-            listBoxList.Items.Add("士林夜市隨意吃");
-            listBoxList.Items.Add("Costco覓食");
-            listBoxList.Items.Add("餐卷爽爽吃");
-            listBoxList.Items.Add("自助餐");
-            listBoxList.Items.Add("桃園覓食");
-            listBoxList.Items.Add("新竹覓食");
-            listBoxList.Items.Add("兔兔師下麵");
+                this._Excel.Quit();
+                this._Excel = null;
+                //確認已經沒有excel工作再回收
+                GC.Collect();
+
+                MessageBox.Show("讀取完成 !!\r\n \r\n請選則餐廳群組", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw;
+            }
+        }
+
+        private void comboBox_Group_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                listBoxList.Items.Clear();
+                foreach (var item in restaurants)
+                {
+                    if (item.Category == comboBox_Group.Text)
+                    {
+                        listBoxList.Items.Add(item.RestaurantName);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw;
+            }
         }
 
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
@@ -238,6 +204,82 @@ namespace LunchLotteryApp
             foreach (var item in tempList)
             {
                 listBoxList.Items.Add(item);
+            }
+        }
+
+
+
+        void initailExcel()
+        {
+            //檢查PC有無Excel在執行
+            bool flag = false;
+            foreach (var item in Process.GetProcesses())
+            {
+                if (item.ProcessName == "EXCEL")
+                {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag)
+            {
+                this._Excel = new Excel.Application();
+            }
+            else
+            {
+                object obj = Marshal.GetActiveObject("Excel.Application");//引用已在執行的Excel
+                _Excel = obj as Excel.Application;
+            }
+
+            this._Excel.Visible = false;//設false效能會比較好
+        }
+
+        void readExcelSheetsName()
+        {
+
+        }
+
+        void operExcel()
+        {
+            Excel.Workbook book = null;
+            Excel.Worksheet sheet = null;
+            Excel.Range range = null;
+            string path = label_FilePath.Text;
+            try
+            {
+                book = _Excel.Workbooks.Open(path);
+
+                for (int i = 1; i <= book.Sheets.Count; i++)
+                {
+                    sheet = book.Worksheets[i];
+                    comboBox_Group.Items.Add(sheet.Name);
+
+                    int totalColumns = sheet.UsedRange.Columns.Count;
+                    int totalRows = sheet.UsedRange.Rows.Count;
+
+                    for (int col = 1; col <= totalColumns; col++)
+                    {
+                        for (int row = 1; row <= totalRows; row++)
+                        {
+                            range = (Excel.Range)sheet.Cells[row, col];
+                            if (range.Value2 != null && range.Value2.ToString().Trim() != string.Empty)
+                            {
+                                restaurants.Add(new RestaurantProp()
+                                {
+                                    Category = sheet.Name,
+                                    RestaurantName = range.Value2.ToString().Trim()
+                                });
+                            }
+                            
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                book.Close();
+                book = null;
             }
         }
     }
